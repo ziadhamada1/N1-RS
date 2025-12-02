@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>خطوات إنتاج خريطة المؤشرات المبنية - تفاعلية</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 50px 20px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #333;
+    }
+    .steps-nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+      gap: 10px;
+    }
+    .step-btn {
+      padding: 10px 20px;
+      background-color: #ddd;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    .step-btn.active {
+      background-color: #007bff;
+      color: #fff;
+    }
+    .step-content {
+      display: none;
+      text-align: right;
+      animation: fadeIn 0.5s;
+    }
+    .step-content.active {
+      display: block;
+    }
+    .step-content img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin-top: 15px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+    }
+    .step-title {
+      font-size: 22px;
+      font-weight: bold;
+      color: #555;
+      margin-bottom: 10px;
+    }
+    .back-btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 25px;
+      background-color: #007bff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    .back-btn:hover {
+      background-color: #0056b3;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+  </style>
+</head>
+<body>
+
+<section class="container">
+  <h2>
+    
+    
+    
+
+
+
+     شرح Toolbar
+  </h2>
+
+  <!-- شريط التنقل بين الخطوات -->
+  <div class="steps-nav">
+    
+
+
+    
+    <button class="step-btn active" class="step-btn" data-step="12">Open Product </button>
+    <button class="step-btn" data-step="13"> save</button>
+    <button class="step-btn" data-step="14"> Show /hide no-data</button>
+    <button class="step-btn" data-step="15"> Show / hide geometry</button>
+    <button class="step-btn" data-step="16"> Show / Hide Graticule</button>
+    <button class="step-btn" data-step="17"> Show/Hide Pin</button>
+    <button class="step-btn" data-step="18"> Show/Hide GCP</button>
+    <button class="step-btn" data-step="19">Show/Hide World  </button>
+    <button class="step-btn" data-step="20"> GraphBuilder</button>
+
+    <button class="step-btn" data-step="21">Batch Processing </button>
+    <button class="step-btn" data-step="22"> Selection Tool</button>
+    <button class="step-btn" data-step="23"> Panning Tool</button>
+    <button class="step-btn" data-step="24"> Zooming Tool</button>
+    <button class="step-btn" data-step="25"> PIN Placing Tool</button>
+    <button class="step-btn" data-step="26"> GCP</button>
+    <button class="step-btn" data-step="27"> Vector Drawing Tools</button>
+    <button class="step-btn" data-step="28"> Determines</button>
+    <button class="step-btn" data-step="29"> Tile Tools</button>
+    <button class="step-btn" data-step="30">Angular View </button>
+
+  </div>
+
+
+    <div class="step-content active" class="step-content" data-step="12">
+    <div class="step-title"> Open Product:</div>
+    <p>
+أداة تُستخدم لفتح منتجات الصور الفضائية (Satellite Products) داخل برنامج SNAP مثل ملفات Sentinel أو GeoTIFF لبدء عرضها وتحليلها</p>
+    <img src="img/New folder/1.jpg" alt="إنشاء الخريطة النهائية">
+  </div>
+
+  
+    <div class="step-content" data-step="13">
+    <div class="step-title"> Save All</div>
+<p>أداة لحفظ كل التغييرات والعمليات التي تم إجراؤها على جميع المنتجات المفتوحة داخل SNAP في خطوة واحدة</p>    
+    <img src="img/New folder/save.jpg" alt="إنشاء الخريطة النهائية">
+  </div>
+
+  
+    <div class="step-content" data-step="14">
+    <div class="step-title"> Show /hide no-data overlay for the selected image</div>
+    <p>
+أداة تُستخدم لإظهار أو إخفاء المناطق التي لا تحتوي على بيانات حقيقية (No-Data) داخل الصورة، وذلك لتوضيح حدود المشهد وتجنب تحليل الأجزاء الفارغة أو غير الصالحة للمعالجة</p>
+    <img src="img/New folder/photo_2025-12-02_01-39-03.jpg" alt="إنشاء الخريطة النهائية">
+  </div>
+
+  
+    <div class="step-content" data-step="15">
+    <div class="step-title"> Show / hide geometry overlay for the selected image</div>
+    <p>
+أداة لإظهار أو إخفاء الطبقات الهندسية (مثل الـ polygons, lines, points) المرسومة فوق الصورة، وذلك لتسهيل العرض أثناء التحليل.</p>
+    <img src="img/New folder/4.jpg" alt="إنشاء الخريطة النهائية">
+  </div>
+
+
+
+    <div class="step-content" data-step="16">
+    <div class="step-title"> Show / Hide Graticule Overlay for the Selected Image</div>
+    <p>أداة تُستخدم لإظهار أو إخفاء شبكة خطوط الطول والعرض (Graticule) فوق الصورة المحددة داخل البرنامج، وذلك لتوضيح الإحداثيات الجغرافية لكل نقطة على الصورة، ومساعدة المستخدم في تحديد المواقع بدقة وتسهيل الفهم المكاني للمشهد دون التأثير على البيانات الأساسية للصورة.</p>
+    <img src="img/New folder/5.jpg" alt="إنشاء الخريطة النهائية">
+  </div>
+
+
+  
+    <div class="step-content" data-step="17">
+    <div class="step-title"> Show/Hide Pin Overlay for the Selected Image</div>
+    <p>تُستخدم لإظهار أو إخفاء العلامات (Pins) الموضوعة على الصورة.
+
+تساعد على رؤية نقاط الاهتمام أو المواقع المهمة بسهولة، دون التأثير على بيانات الصورة نفسها.</p>
+    <img src="img/New folder/6.jpg" alt="إنشاء الخريطة النهائية">
+  </div>
+
+
+
+  
+    <div class="step-content" data-step="18">
+    <div class="step-title"> Show/Hide GCP Overlay for the Selected Image   </div>
+    <p>تُستخدم لإظهار أو إخفاء نقاط التحكم الأرضية (GCPs – Ground Control Points) الموضوعة على الصورة.
+
+تساعد على التحقق من مواقع هذه النقاط بسهولة أثناء المعالجة، دون تعديل بيانات الصورة نفسها.</p>
+
+    <img src="img/New folder/7.jpg" alt="إنشاء الخريطة النهائية">
+  </div>
+
+
+
+    <div class="step-content" data-step="19">
+    <div class="step-title"> Show/Hide World Map Overlay:</div>
+    <p>
+	•	تُظهر أو تُخفي خريطة العالم فوق نافذة العرض في البرنامج.
+	•	تساعدك تحدد موقع الصورة على مستوى الكرة الأرضية.
+	•	تستخدم كطبقة مرجعية لفهم الامتداد الجغرافي بسرعة</p>
+    <img src="img/New folder/8.jpg" alt="إنشاء الخريطة النهائية">
+  </div>
+
+
+
+    <div class="step-content" data-step="20">
+    <div class="step-title"> GraphBuilder :</div>
+    <p>يُستخدم لفتح ملف بيانات/منتج (image/product)</p>
+    <P>•	أداة في برنامج SNAP تسمح لك ببناء سلسلة عمليات معالجة الصور خطوة-بخطوة.
+	•	تقدر تربط بين الأدوات (Operators) في مسار معالجة واحد بشكل مرئي ومنظم.
+	•	تُستخدم لعمل معالجة آلية للصور بدل ما تعمل كل خطوة يدويً</P>
+    <img src="img/New folder/9.jpg" alt="إنشاء الخريطة النهائية">
+  </div>
+
+
+
+
+  
+    <div class="step-content" data-step="21">
+    <div class="step-title"> Batch Processing</div>
+    <P>
+	•	أداة في SNAP تسمح بمعالجة مجموعة كبيرة من الصور دفعة واحدة.
+	•	توفر وقت كبير بدل ما تشغل نفس العملية على كل صورة يدويًا.
+	•	مفيدة في المهام المتكررة زي التصحيح، الفلترة، والـ preprocessing</P>
+    <img src="img/New folder/10.jpg" alt="إنشاء الخريطة النهائية">
+  </div>
+
+
+
+
+    <div class="step-content" data-step="22">
+    <div class="step-title"> Selection Tool:</div>
+    <P>
+	•	أداة تُستخدم لتحديد عناصر أو أجزاء معينة داخل نافذة العمل.
+	•	تُمكّنك من اختيار نقاط، مناطق، أو كائنات للتعديل أو الفحص.
+	•	أساسية لأي عملية تحرير أو تحليل داخل البرنامج</P>
+    <img src="img/New folder/11.jpg" alt="إنشاء الخريطة النهائية">
+  </div>
+
+
+  <div class="step-content" data-step="23">
+    <div class="step-title"> Panning Tool</div>
+
+    <P>تسمح بتحريك مساحة العمل داخل البرنامج دون تغيير العناصر.
+تُستخدم للتنقل بين أجزاء مختلفة من الصورة عند التكبير.
+باختصار، تتحرك الكاميرا على العمل بدل تحريك العناصر نفسه</P>
+    <img src="img/New folder/12.jpg" alt="إنشاء الخريطة النهائية">
+  </div>
+
+
+  <div class="step-content" data-step="24">
+    <div class="step-title"> Zooming Tool</div>
+<P>تسمح تكبير أو تصغير مساحة العمل أو الصورة.
+تُستخدم لرؤية التفاصيل الدقيقة أو لمراجعة الصورة بالكامل.
+باختصار، تتحكم في مستوى التكبير/التصغير دون تحريك العناص</P>
+    <img src="img/New folder/13.jpg" alt="إنشاء الخريطة النهائية">
+  </div>
+
+
+  <div class="step-content" data-step="25">
+    <div class="step-title"> PIN Placing Tool</div>
+    <P>أداة تُستخدم لوضع علامات (Pins) على نقاط محددة داخل الصورة في SNAP. تساعد هذه الأداة في تحديد مواقع دقيقة للمعالم، حفظ إحداثيات نقاط مهمة، أو الإشارة إلى مناطق محددة للقياس أو التحليل المكاني دون تعديل باقي البيانات.</P>
+    <img src="img/New folder/14.jpg" alt="إنشاء الخريطة النهائية">
+  </div>
+
+
+
+    <div class="step-content" data-step="26">
+    <div class="step-title">GCP Placing Tool </div>
+    <P>أداة تُستخدم لوضع أو رسم النقاط، الخطوط، أو المضلعات مباشرة على الصورة داخل SNAP. تساعد هذه الأداة في تحديد مواقع دقيقة، إنشاء معالم متجهية جديدة، أو تعديل المعالم الموجودة، مما يسهل تحليل البيانات المكانية وإجراء القياسات الهندسية على المشهد.</P>
+    <img src="img/New folder/15.jpg" alt="إنشاء الخريطة النهائية">
+  </div>
+
+
+
+    <div class="step-content" data-step="27">
+    <div class="step-title"> Line – Polygon – Rectangle – Ellipse – New Vector</div>
+    <p>مجموعة أدوات تُستخدم لإنشاء أشكال هندسية وطبقات متجهية (Vector Layers) داخل SNAP بهدف القياس، التحديد، والرسم على الصورة. تساعد هذه الأدوات في تحليل المعالم المختلفة على المشهد، سواء كانت خطوطًا أو مساحات أو أشكالًا محددة هندسيًا، مما يدعم عمليات التفسير البصري والدراسة المكانية</p>
+    <img src="img/New folder/16.jpg" alt="إنشاء الخريطة النهائية">
+  </div>
+
+
+  <div class="step-content" data-step="28">
+    <div class="step-title"> Determines the Distance Between Two Points</div>
+<p>أداة تُستخدم لحساب المسافة بين نقطتين يتم تحديدهما على الصورة داخل SNAP. تعمل الأداة على قياس المسافة الحقيقية بناءً على نظام الإحداثيات والمعايرة الموجودة في بيانات الصورة، مما يساعد في إجراء القياسات المكانية بدقة وفهم أبعاد العناصر أو المسافات بين المواقع المختلفة داخل المشهد</p>    
+    <img src="img/New folder/17.jpg" alt="إنشاء الخريطة النهائية">
+  </div>
+
+
+
+
+    <div class="step-content" data-step="29">
+    <div class="step-title"> Tile Tools</div>
+<p>مجموعة أدوات تُستخدم للتحكم في كيفية تقسيم الصورة إلى بلاطات (Tiles) أثناء المعالجة داخل SNAP. الهدف من هذه الأدوات هو تحسين أداء البرنامج وتسريع عمليات المعالجة، خاصة مع الصور كبيرة الحجم. تتيح هذه الخيارات تقسيم المشهد بعدة طرق مختلفة (مفردة، متساوية، أفقية، أو رأسية)، مما يساعد في إدارة الذاكرة ومعالجة البيانات بكفاءة أكبر</p>    
+    <img src="img/New folder/18.jpg" alt="إنشاء الخريطة النهائية">
+  </div>
+
+
+
+    <div class="step-content" data-step="30">
+    <div class="step-title"> Angular View</div>
+<P>أداة تُستخدم لإنشاء وعرض طبقات زوايا الرؤية الخاصة ببيانات الرادار، مثل زاوية السقوط (Incidence Angle) وزاوية الاتجاه (Azimuth Angle). تساعد هذه الطبقات في فهم كيفية رؤية الرادار للمنطقة، مما يساهم في تفسير قيم الـ Backscatter وتحسين عمليات التصحيح الهندسي والتحليل المكاني</P>    
+    <img src="img/New folder/19.jpg" alt="إنشاء الخريطة النهائية">
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+  <div style="text-align:center;">
+    <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> العودة للصفحة الرئيسية</a>
+  </div>
+
+</section>
+
+
+
+
+
+<!-- ظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظ -->
+
+
+<script>
+  const buttons = document.querySelectorAll('.step-btn');
+  const contents = document.querySelectorAll('.step-content');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const step = btn.getAttribute('data-step');
+
+      // إزالة الكلاسات النشطة
+      buttons.forEach(b => b.classList.remove('active'));
+      contents.forEach(c => c.classList.remove('active'));
+
+      // إضافة الكلاسات للخطوة المختارة
+      btn.classList.add('active');
+      document.querySelector(`.step-content[data-step="${step}"]`).classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
